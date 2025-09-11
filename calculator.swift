@@ -14,3 +14,13 @@ func showMenu() {
 }
 
 showMenu() // 显示菜单
+
+// 幂运算
+func exponent(_ base: Double, _ power: Double) -> Double {
+    return pow(base, power)
+}
+
+// 取余
+func remainder(_ a: Int, _ b: Int) -> Int {
+    return a % :b
+}
