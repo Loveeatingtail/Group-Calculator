@@ -1,10 +1,6 @@
 import Foundation
 
-<<<<<<< HEAD
-// ===== 显示菜单 =====
-=======
 // 显示菜单
->>>>>>> origin/main
 func showMenu() {
     print("""
     Select an operation:
@@ -17,62 +13,58 @@ func showMenu() {
     """)
 }
 
-<<<<<<< HEAD
-// ===== 输入工具 =====
-func readDouble(_ tip: String) -> Double {
-    print(tip, terminator: "")
-    guard let s = readLine(), let v = Double(s) else {
-        print("Invalid number"); exit(0)
-    }
-    return v
-}
-
-func readInt(_ tip: String) -> Int {
-    print(tip, terminator: "")
-    guard let s = readLine(), let v = Int(s) else {
-        print("Invalid integer"); exit(0)
-    }
-    return v
-}
-
-// ===== 你负责的两个函数（5 & 6）=====
-func exponent(_ a: Double, _ b: Double) -> Double { pow(a, b) }
-
-func remainder(_ a: Int, _ b: Int) -> Int { a % b }
-
-// ===== 主流程：本分支仅实现 5/6，其它占位 =====
-showMenu()
-print("Enter choice (1-6): ", terminator: "")
-guard let s = readLine(), let op = Int(s) else {
-    print("Invalid choice"); exit(0)
-}
-
-switch op {
-case 1,2,3,4:
-    print("This operation is not implemented on this branch. It will work after merge.")
-
-case 5:
-    let base = readDouble("Enter base: ")
-    let power = readDouble("Enter exponent: ")
-    print("Result:", exponent(base, power))
-
-case 6:
-    let a = readInt("Enter first integer: ")
-    let b = readInt("Enter second integer: ")
-    if b == 0 { print("Divisor cannot be 0 for remainder"); exit(0) }
-    print("Result:", remainder(a, b))
-
-default:
-    print("Invalid choice")
-}
-=======
 showMenu() // 显示菜单
-let a = readline()!
- if a = 1 {add
-} else if a = 2 {sub
-} else if a = 3 {multiply
-} else if a = 4 {divide
-} else if a = 5 {exponent
-} else if a = 6 {remainder
-} else { print("please input an valid number")
->>>>>>> origin/main
+
+print("Enter choice (1-6): ", terminator: "")
+guard let choiceStr = readLine(), let a = Int(choiceStr) else {
+    print("❌ please input a valid number")
+    exit(0)
+}
+
+if a == 1 {
+    print("add")   // 留给队友实现
+
+} else if a == 2 {
+    print("sub")   // 留给队友实现
+
+} else if a == 3 {
+    print("multiply")   // 留给队友实现
+
+} else if a == 4 {
+    print("divide")   // 留给队友实现
+
+} else if a == 5 {
+    // ===== 你负责的指数运算 =====
+    print("Enter base: ", terminator: "")
+    guard let baseStr = readLine(), let base = Double(baseStr) else {
+        print("❌ invalid base")
+        exit(0)
+    }
+    print("Enter exponent: ", terminator: "")
+    guard let powStr = readLine(), let power = Double(powStr) else {
+        print("❌ invalid exponent")
+        exit(0)
+    }
+    print("✅ Result = \(pow(base, power))")
+
+} else if a == 6 {
+    // ===== 你负责的取余运算 =====
+    print("Enter first integer: ", terminator: "")
+    guard let xStr = readLine(), let x = Int(xStr) else {
+        print("❌ invalid integer")
+        exit(0)
+    }
+    print("Enter second integer: ", terminator: "")
+    guard let yStr = readLine(), let y = Int(yStr) else {
+        print("❌ invalid integer")
+        exit(0)
+    }
+    if y == 0 {
+        print("❌ divisor cannot be 0")
+        exit(0)
+    }
+    print("✅ Result = \(x % y)")
+
+} else {
+    print("❌ please input a valid number")
+}
