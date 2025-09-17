@@ -14,3 +14,11 @@ func showMenu() {
 }
 
 showMenu() // 显示菜单
+let a = readline()!
+ if a = 1 {add
+} else if a = 2 {sub
+} else if a = 3 {multiply
+} else if a = 4 {divide
+} else if a = 5 {exponent
+} else if a = 6 {remainder
+} else { print("please input an valid number")
