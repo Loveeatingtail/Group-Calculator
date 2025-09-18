@@ -28,11 +28,5 @@ if input == "1" {
         print(sub)
     }
 }
-/* else if input == "3" { // multiply
-} else if input == "4" { // divide
-} else if input == "5" { // exponent
-} else if input == "6" { // remainder
-} else { 
-    print("please input a valid number")
-} */
+
 
