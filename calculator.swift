@@ -13,20 +13,19 @@ func showMenu() {
 }
 
 showMenu()
-let input = readLine()!
-
-if input == "1" {
-    if let a = readLine(), let numberA = Int(a),
-       let b = readLine(), let numberB = Int(b) {
-        let sum = numberA + numberB
-        print(sum)
-    }
-} else if input == "2" {
-    if let a = readLine(), let numberA = Int(a),
-       let b = readLine(), let numberB = Int(b) {
-        let sub = numberA - numberB
-        print(sub)
-    }
-}
+if let input = readLine() {
+    if input == "1" {
+        if let a = readLine(), let numberA = Int(a),
+           let b = readLine(), let numberB = Int(b) {
+            print(numberA + numberB)
+        }
+    } else if input == "2" {
+        if let a = readLine(), let numberA = Int(a),
+           let b = readLine(), let numberB = Int(b) {
+            print(numberA - numberB)
+        }
+        else {
+              print("please input a valid value")
+        }
 
 
